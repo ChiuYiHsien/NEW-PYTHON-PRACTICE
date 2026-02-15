@@ -22,3 +22,8 @@ division = num_1 / num_2
 
 if len(first_name) > len(country):
     print("The length of the first name is greater than the length of the country name.")
+    
+
+radius = input("Enter the radius of a circle: ")
+area_of_circle = 3.14 * int(radius) ** 2
+print("The area of the circle is: " + str(area_of_circle))
