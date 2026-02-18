@@ -104,7 +104,8 @@ for i in range(10):
     
     max_count = -1
     most_lan = None
-    for lan, count in temp_counts.items():
+    for lan, count in temp_counts.items(): #解構賦值 lan = key , count = value
+        # items()就是要給人迭代用的，每次回圈都會丟一個tuple出來
         if count > max_count:
             max_count = count
             most_lan = lan   
