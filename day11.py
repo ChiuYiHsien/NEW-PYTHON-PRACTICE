@@ -120,5 +120,14 @@ for j in range(len(top_ten)):
     print(f"第{j+1}多國家使用的語言: {top_ten[j]}")
 
 
+print("--------使用lambda---------")
+
+sorted_list = []
+before = counts.items()
+sorted_list = sorted(before, key = lambda x: x[1], reverse = True)
+
+for lan, count in sorted_list[:10]:
+    print(f"{lan} : {count}次")
+
 
 
