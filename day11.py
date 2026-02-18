@@ -99,22 +99,24 @@ for country in countries_data.datas:
 #print(f"最多國家使用的語言是{most_lan}，共{max_count}國使用")
 
 temp_counts = counts.copy()
-
+top_ten = []
 for i in range(10):
-    top_ten = []
+    
     max_count = -1
     most_lan = None
-    if count > max_count:
-        max_count = count
-        most_lan = lan
+    for lan, count in temp_counts.items():
+        if count > max_count:
+            max_count = count
+            most_lan = lan   
+
         
     if most_lan:
         top_ten.append((most_lan, max_count))
-        del counts[most_lan]
+        del temp_counts[most_lan]
         
     
-for i in range(10):
-    print(f"第{i}多國家使用的語言是{most_lan}，共{max_count}國使用")
+for j in range(len(top_ten)):
+    print(f"第{j+1}多國家使用的語言: {top_ten[j]}")
 
 
 
