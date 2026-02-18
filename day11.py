@@ -90,13 +90,31 @@ for country in countries_data.datas:
         else:
             counts[lan] = 1
          
-max_count = 0
-most_lan = None
-for lan, count in counts.items(): #items()會把字典裡面的key-value對應拆成許多tuple {(k-v),(k-v),(k-v)......}
+#max_count = 0
+#most_lan = None
+#for lan, count in counts.items(): #items()會把字典裡面的key-value對應拆成許多tuple {(k-v),(k-v),(k-v)......}
+    #if count > max_count:
+        #max_count = count
+        #most_lan = lan
+#print(f"最多國家使用的語言是{most_lan}，共{max_count}國使用")
+
+temp_counts = counts.copy()
+
+for i in range(10):
+    top_ten = []
+    max_count = -1
+    most_lan = None
     if count > max_count:
         max_count = count
         most_lan = lan
-print(f"最多國家使用的語言是{most_lan}，共{max_count}國使用")
+        
+    if most_lan:
+        top_ten.append((most_lan, max_count))
+        del counts[most_lan]
+        
+    
+for i in range(10):
+    print(f"第{i}多國家使用的語言是{most_lan}，共{max_count}國使用")
 
 
 
